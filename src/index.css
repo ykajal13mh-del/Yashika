@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f3ff;
+  --color-neon-purple: #bc13fe;
+  --color-dark-bg: #0a0a0c;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glow-blue {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.3);
+  }
+  .glow-purple {
+    text-shadow: 0 0 10px rgba(188, 19, 254, 0.5), 0 0 20px rgba(188, 19, 254, 0.3);
+  }
+  .border-neon-blue {
+    border-color: #00f3ff;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+  }
+  .border-neon-purple {
+    border-color: #bc13fe;
+    box-shadow: 0 0 10px rgba(188, 19, 254, 0.3);
+  }
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+  .neon-button-blue {
+    @apply px-6 py-3 rounded-full border-2 border-neon-blue text-neon-blue font-bold transition-all duration-300 hover:bg-neon-blue hover:text-black hover:shadow-[0_0_20px_rgba(0,243,255,0.6)];
+  }
+  .neon-button-purple {
+    @apply px-6 py-3 rounded-full border-2 border-neon-purple text-neon-purple font-bold transition-all duration-300 hover:bg-neon-purple hover:text-black hover:shadow-[0_0_20px_rgba(188,19,254,0.6)];
+  }
+}
